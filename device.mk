@@ -37,6 +37,12 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
 
+# f2fs utilities
+PRODUCT_PACKAGES += \
+    sg_write_buffer \
+    f2fs_io \
+    check_f2fs
+
 # fastboot/d HAL
 PRODUCT_PACKAGES += fastbootd
 PRODUCT_PACKAGES += android.hardware.fastboot@1.1-impl-mock
@@ -74,6 +80,9 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 RECOVERY_BINARY_SOURCE_FILES += \
     $(TARGET_OUT_EXECUTABLES)/debuggerd \
     $(TARGET_OUT_EXECUTABLES)/strace
+
+# Relax
+RELAX_USES_LIBRARY_CHECK := true
 
 # Set GRF/Vendor freeze properties
 BOARD_SHIPPING_API_LEVEL := 31
