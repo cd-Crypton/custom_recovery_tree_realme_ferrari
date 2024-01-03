@@ -26,6 +26,7 @@ PRODUCT_NAME := twrp_ferrari
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := ferrari
 PRODUCT_MANUFACTURER := realme
+PRODUCT_PLATFORM := taro
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
 
